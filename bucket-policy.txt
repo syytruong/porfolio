@@ -1,5 +1,5 @@
 {
-    "Version": "2021-02-28",
+    "Version": "2008-10-17",
     "Statement": [
         {
             "Sid": "AllowPublicRead",
