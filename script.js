@@ -66,7 +66,7 @@ document.getElementById('submit-btn').onclick = function sendEmail(event) {
             onSuccess();
         } else if (request.readyState == 4) {
             onError(request.response);
-            alert('Failed');
+            alert('PostMail server is down, please try later!');
         }
     }
 
