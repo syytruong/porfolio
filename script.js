@@ -36,18 +36,7 @@ window.onload = function() {
 
         emailjs.sendForm('service_458rago', 'template_fnagptr', '#contact-form')
             .then(function() {
-                // let currentColor = document.querySelector('#submit-btn').style.backgroundColor;
-                // document.querySelector('#submit-btn').style.backgroundColor = '#4BB543';
-                // document.querySelector('#submit-btn').value = 'Email Sent! ';
-                // document.querySelector('#submit-btn').style.color = '#fff';
-
-                // setTimeout(function() {
-                //     document.querySelector('#submit-btn').value = 'Send';
-                //     document.querySelector('#submit-btn').style.backgroundColor = currentColor;
-                //     document.querySelector('#contact-form').reset();
-                // }, 3000);
                 sendSuccess();
-                
             }, function(error) {
                 alert('Cannot send email. Error: ', error);
             });
@@ -67,12 +56,12 @@ window.onload = function() {
 			submitBtn.classList.remove("loader", "active");
 			submitBtn.value = "Success!";
 			submitBtn.classList.add("success");
-		}, 1600);
+		}, 1800);
         setTimeout(() => {
 			submitBtn.value = "Send";
 			submitBtn.classList.remove("success");
 			submitBtn.blur();
-		}, 2900);
+		}, 3000);
     }
 
 }
