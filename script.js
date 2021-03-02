@@ -62,7 +62,6 @@ window.onload = function() {
         submitBtn.classList.add('active');
         setTimeout(() => {
 			submitBtn.classList.add("loader");
-            console.log(submitBtn.style.border.value);
 		}, 125);
         setTimeout(() => {
 			submitBtn.classList.remove("loader", "active");
