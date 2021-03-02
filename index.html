@@ -12,6 +12,13 @@
         <link rel="stylesheet" type="text/css" href="default.css" >
 
         <link id="theme-style" rel="stylesheet" type="text/css" href="" >
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init('user_Lo0f3AfhSxMuhWhPZ4k4G');
+            })();
+        </script>
     </head>
     <body>
 
@@ -172,7 +179,7 @@
             <div class="main-container">
                 <h3 style="text-align: center;">Get In Touch</h3>
 
-                <form id="contact-form">
+                <form id="contact-form" method="post">
                     <label>Name</label>
                     <input class="input-field" type="text" name="name">
 
@@ -184,9 +191,6 @@
 
                     <label>Message</label>
                     <textarea class="input-field" name="message"></textarea>
-
-                    <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
-                    <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
 
                     <input id="submit-btn" type="submit" value="Send">
                 </form>
