@@ -30,10 +30,18 @@ function setTheme(mode) {
     localStorage.setItem('theme', mode);
 }
 
-let contactForm = 'contact-form';
+let formId = 'contact-form';
+
+let  form = document.getElementById(formId);
+
+function handleForm (event) {
+    event.preventDefault();
+}
+
+form.addEventListener('submit', handleForm);
 
 let data = {
-    "access_token": "{7n3ga0zsl58d0n3lgl1qsijm}"
+    "access_token": "7n3ga0zsl58d0n3lgl1qsijm"
 };
 
 function onSuccess() {
@@ -46,23 +54,26 @@ function onError(error) {
 
 let sendBtn = document.getElementById('submit-btn');
 
-document.getElementById('submit-btn').onclick = function sendEmail() {
-    console.log('sendEmail called');
-    sendBtn.value = 'Sending...';
-    sendBtn.disabled = true;
+document.getElementById('submit-btn').onclick = function sendEmail(event) {
+    event.preventDefault();
+    setTimeout(function() {
+        sendBtn.value = "Sending...";
+        sendBtn.disabled = true;
+    }, 1);
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
             onSuccess();
         } else if (request.readyState == 4) {
             onError(request.response);
+            alert('Failed');
         }
     }
 
-    let contactorName = document.querySelector('#' + contactForm + " [name='name']").value;
-    let subject = document.querySelector('#' + contactForm + " [name='subject']").value;
-    let email = document.querySelector('#' + contactForm + " [name='email']").value; 
-    let message = document.querySelector('#' + contactForm + " [name='message']").value;
+    let contactorName = document.querySelector('#' + formId + " [name='name']").value;
+    let subject = document.querySelector('#' + formId + " [name='subject']").value;
+    let email = document.querySelector('#' + formId + " [name='email']").value; 
+    let message = document.querySelector('#' + formId + " [name='message']").value;
 
     data['name'] = contactorName;
     data['subject'] = subject;
@@ -88,9 +99,3 @@ function toParams(data) {
 
     return form_data.join('&');
 }
-
-let js_form = document.getElementById(contactForm);
-js_form.addEventListener("submit", function(e) {
-    e.preventDefault();
-})
-
