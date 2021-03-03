@@ -50,10 +50,13 @@ window.onload = function() {
 
         submitBtn.classList.add('active');
         setTimeout(() => {
-			submitBtn.classList.add("loader");
+			document.querySelector('.loader').style.display = "block";
+            document.querySelector('#submit-btn').style.display = "none";
 		}, 125);
         setTimeout(() => {
-			submitBtn.classList.remove("loader", "active");
+			document.querySelector('.loader').style.display = "none";
+            document.querySelector('#submit-btn').style.display = "";
+            submitBtn.classList.remove('active');
 			submitBtn.value = "Success!";
 			submitBtn.classList.add("success");
 		}, 1800);
