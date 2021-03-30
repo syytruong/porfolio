@@ -65,6 +65,7 @@ window.onload = function() {
 			submitBtn.classList.remove("success");
 			submitBtn.blur();
 		}, 3000);
+        document.getElementById('contact-form').reset();
     }
 
 }
