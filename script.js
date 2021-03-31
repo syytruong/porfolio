@@ -38,7 +38,7 @@ window.onload = function() {
             .then(function() {
                 sendSuccess();
             }, function(error) {
-                alert('Cannot send email. Error: ', error);
+                alert('Error: This account has sent 200 emails, please update', error);
             });
     });
 
