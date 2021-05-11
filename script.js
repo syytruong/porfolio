@@ -38,7 +38,7 @@ window.onload = function() {
             .then(function() {
                 sendSuccess();
             }, function(error) {
-                alert('Cannot send email. Error: ', error);
+                alert('Cannot send email. Error: This website has used 200 emails this month', error);
             });
     });
 
